@@ -10,13 +10,13 @@ Clone the project and serve with your preferred web server.
 
 You will need PHP 5.5+ installed.
 
-### Installing
+## Configure
 
-No compiling steps; copy to your serving directory.
+### Configure the Back End Data Source
 
 #### Cisco UCCX
 
-In order to use UCCX, in 'uccx.php', provide a name and credentials for the ODBC connection.
+In order to use UCCX, in 'uccx.php', provide a name and credentials for the ODBC connection, and change as necessary.
 
 ```php
 $UCCX_name = "DSN_Name";
@@ -26,12 +26,27 @@ $UCCX_password = "DSN_Password";
 
 #### HPSM9
 
-In order to use HPSM9, in 'sm9.php', provide the SM9 address and REST credentials.
+In order to use HPSM9, in 'sm9.php', provide the SM9 address and REST credentials, and change as necessary.
 
 ```php
 $hpsm_user = 'Username';
 $hpsm_pass = base64_decode('Password');
 $hpsm = 'HPSM_ADDRESS:PORT/SM/9/rest/misinteraction?query=';
+```
+
+#### Flat File
+
+Add a flat file containing a JSON object, and display the data. Add a service $http.get request that points to your flat file.
+
+```javascript
+    return $http.get('app/slave/yourfile.txt');
+```
+
+Add a controller that calls the service and save the data into your scope.
+
+```javascript
+$interval(function() {
+    sm9_query_service.getSm9().success(function(data) {
 ```
 
 #### Alerts
