@@ -1,61 +1,69 @@
 # Service Wallboard
 
-The project is a wallboard built with PHP and AngulatJS. Example PHP code examples are included for pulling data from Cisco UCCX and HPSM9.
+This is a wallboard built with AngularJS 1.5 and PHP. The grid layout is Bootstrap. This project has been used to display data from Cisco UCCX and HPSM9.
+
+
 
 ## Getting Started
 
-Serve the project with your preferred web server. 
+Clone the project and serve with your preferred web server.
 
 ### Prerequisites
 
-...
-
-```
-Give examples
-```
+You will need PHP 5.5+ installed.
 
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
+No compiling steps; copy to your serving directory.
 
-Say what the step will be
+#### Cisco UCCX
 
-```
-Give the example
-```
+In order to use UCCX, in 'uccx.php', provide a name and credentials for the ODBC connection.
 
-And repeat
-
-```
-until finished
+```php
+$UCCX_name = "DSN_Name";
+$UCCX_username = "DSN_Username";
+$UCCX_password = "DSN_Password";
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+#### HPSM9
 
+In order to use HPSM9, in 'sm9.php', provide the SM9 address and REST credentials.
 
-### And coding style tests
-
-Explain what these tests test and why
-
+```php
+$hpsm_user = 'Username';
+$hpsm_pass = base64_decode('Password');
+$hpsm = 'HPSM_ADDRESS:PORT/SM/9/rest/misinteraction?query=';
 ```
-Give an example
+
+#### Alerts
+
+Setup alerts in 'alert_controller.js. This changes the colours on the grid elements when specified values are returned.
+
+```php
+if ($scope.Row1_Box_01 == 0) {
+    $scope.Row1_Box_01_colour = "stage stage-alert";
+    $scope.Row1_Box_01_title = "None Ready";
+} else if ($scope.Row1_Box_01 == 1) {
+    $scope.Row1_Box_01_colour = "stage stage-warning";
+    $scope.Row1_Box_01_title = "Ready";
+}
 ```
-
-## Deployment
-
-Additional notes about how to deploy this on a live system
 
 ## Built With
 
 * [AngularJS](https://angularjs.org/) - The web front end framework used
+* [Bootstrap 3](https://angularjs.org/) - The web grid system used.
+
+
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
 
 ## Authors
 
-* **Matthew Van Achteren** - *Initial work* 
+* **Matthew Van Achteren** - *developer and maintainer*
 
 ## License
 
