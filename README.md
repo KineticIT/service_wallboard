@@ -2,8 +2,6 @@
 
 This is a wallboard built with AngularJS 1.5 and PHP. The grid layout is Bootstrap. This project has been used to display data from Cisco UCCX and HPSM9.
 
-
-
 ## Getting Started
 
 Clone the project and serve with your preferred web server.
@@ -43,10 +41,10 @@ Setup alerts in 'alert_controller.js. This changes the colours on the grid eleme
 ```php
 if ($scope.Row1_Box_01 == 0) {
     $scope.Row1_Box_01_colour = "stage stage-alert";
-    $scope.Row1_Box_01_title = "None Ready";
+    $scope.Row1_Box_01_title = "title";
 } else if ($scope.Row1_Box_01 == 1) {
     $scope.Row1_Box_01_colour = "stage stage-warning";
-    $scope.Row1_Box_01_title = "Ready";
+    $scope.Row1_Box_01_title = "another title";
 }
 ```
 
