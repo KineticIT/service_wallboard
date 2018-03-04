@@ -10,47 +10,45 @@ angular.module('scw').
     //alert: Ready
     if ($scope.Row1_Box_01 == 0) {
       $scope.Row1_Box_01_colour = "stage stage-alert";
-      $scope.Row1_Box_01_title = "None Ready";
+      $scope.Row1_Box_01_title = "Alert 2";
     } else if ($scope.Row1_Box_01 == 1) {
       $scope.Row1_Box_01_colour = "stage stage-warning";
-      $scope.Row1_Box_01_title = "Ready";
+      $scope.Row1_Box_01_title = "Alert 1";
     } else {
       $scope.Row1_Box_01_colour = "stage stage-green";
-      $scope.Row1_Box_01_title = "Ready";
-    };
+      $scope.Row1_Box_01_title = "Title";
+    }
 
     //alert: Waiting
     if ($scope.Row1_Box_01 <= 0 && $scope.Row1_Box_04 == 1) {
       $scope.Row1_Box_04_colour = "stage stage-warning";
-      $scope.Row1_Box_04_title = "Waiting";
+      $scope.Row1_Box_04_title = "Alert 2";
     } else if ($scope.Row1_Box_01 <= 0 && $scope.Row1_Box_04 >= 2) {
       $scope.Row1_Box_04_colour = "stage stage-alert";
-      $scope.Row1_Box_04_title = "Waiting";
+      $scope.Row1_Box_04_title = "Alert 1";
     } else {
       $scope.Row1_Box_04_colour = "stage stage-green";
-      $scope.Row1_Box_04_title = "Waiting";
+      $scope.Row1_Box_04_title = "Title";
     }
 
     //label: Interactions
     if ($scope.Row2_Box_03 == "") {
-      $scope.Row2_Box_03_title = "No Interactions";
-      $scope.Row2_Box_02_title = "No Interactions";
-      //$scope.Row2_Box_02 = "";
+      $scope.Row2_Box_03_title = "No Value";
+      $scope.Row2_Box_02_title = "No Value";
     } else {
-
-      $scope.Row2_Box_03_title = "Longest Interaction";
-      $scope.Row2_Box_02_title = "Interactions";
-    };
+      $scope.Row2_Box_03_title = "Title";
+      $scope.Row2_Box_02_title = "Title";
+    }
 
     //label: Password Reset
     if ($scope.Row2_Box_01_Time0 == "") {
-        $scope.Row2_Box_01_title = "No Password Resets";
+        $scope.Row2_Box_01_title = "Title";
       //$scope.Row2_Box_01 = "";
 	  
     } else {
-      $scope.Row2_Box_01_title = "Password Reset";
+      $scope.Row2_Box_01_title = "Title";
 	  $scope.empty = 'stage-blue';
-    };
+    }
 
     //alert: Longest Interaction Time
     var intTime = $scope.Row2_Box_03.replace(":", "").trim();
@@ -61,7 +59,7 @@ angular.module('scw').
       $scope.Row2_Box_03_colour = "stage stage-warning";
     } else {
       $scope.Row2_Box_03_colour = "stage stage-blue";
-    };
+    }
 
     //alert: Longest Interaction Time
     var intPass = $scope.Row2_Box_01_Time0.replace(":", "").trim();
@@ -72,7 +70,7 @@ angular.module('scw').
       $scope.Row2_Box_01_colour = "stage stage-warning";
     } else {
       $scope.Row2_Box_01_colour = "stage stage-blue";
-    };
+    }
 
     //alert: Interaction Count
     var intCount = $scope.Row2_Box_02;
