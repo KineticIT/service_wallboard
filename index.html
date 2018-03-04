@@ -1,0 +1,230 @@
+<html>
+<head>
+  <title>SCW Wallboard</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css'>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300|Work+Sans:300" rel="stylesheet">
+  <link rel="stylesheet" href="content/css/bootstrap.css">
+  <link rel="stylesheet" href="content/css/main.css">
+  <script src="content/libs/jquery-3.1.1.min.js"></script>
+  <script src="content/libs/tether.min.js"></script>
+  <script src="content/libs/angular.js"></script>
+  <script src="content/libs/bootstrap.js"></script>
+  <script src="app/start.js"></script>
+  <script src="app/uccx/uccx_query_service.js"></script>
+  <script src="app/uccx/uccx_controller.js"></script>
+  <script src="app/sm9/sm9_query_service.js"></script>
+  <script src="app/sm9/sm9_controller.js"></script>
+  <script src="app/messaging/message_services.js"></script>
+  <script src="app/messaging/message_controller.js"></script>
+  <script src="app/alerts/alert_controller.js"></script>
+</head>
+
+<body>
+
+  <div ng-app="scw" ng-controller="scwCtrl">
+    <div ng-app="scw" ng-controller="uccx_controller">
+      <div ng-app="scw" ng-controller="sm9_controller">
+        <div ng-app="scw" ng-controller="alert_controller">
+
+          <div ng-if="colour();"> </div>
+
+          <div class="container-fluid">
+            <div class="row ">
+              <div class="col-md-12 ">
+                <div class="col-md-10">
+                  <span class="{{page_icon}} icon-title"></span>
+                  <span class="page-title">{{page_title}}</span>
+                </div>
+                <div class="col-md-2">
+                  <div id="indicator" class="{{page_status_icon}} icon-status"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-3 col-sm-6 col-xs-12">
+                <div class="{{Row1_Box_01_colour}} ">
+                  <div class="value">
+                    <div class="col-xs-12">
+                      <div class="{{Row1_Box_01_icon}} icon"> </div>
+                      <p class="content">{{Row1_Box_01}}</p>
+                    </div>
+                    <div class="col-xs-12">
+                      <p class="title">{{Row1_Box_01_title}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-sm-6 col-xs-12">
+                <div class="{{Row1_Box_02_colour}}">
+                  <div class="value">
+                    <div class="col-xs-12">
+                      <div class="{{Row1_Box_02_icon}} icon"> </div>
+                      <p class="content">{{Row1_Box_02}}</p>
+                    </div>
+                    <div class="col-xs-12">
+                      <p class="title">{{Row1_Box_02_title}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-sm-6 col-xs-12">
+                <div class="{{Row1_Box_03_colour}}">
+                  <div class="value">
+                    <div class="col-xs-12">
+                      <div class="{{Row1_Box_03_icon}} icon"> </div>
+                      <p class="content">{{Row1_Box_03}}</p>
+                    </div>
+                    <div class="col-xs-12">
+                      <p class="title">{{Row1_Box_03_title}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-sm-6 col-xs-12">
+                <div class="{{Row1_Box_04_colour}}">
+                  <div class="value">
+                    <div class="col-xs-12">
+                      <div class="ion-alert icon"> </div>
+                      <p class="content">{{Row1_Box_04}}</p>
+                    </div>
+                    <div class="col-xs-12">
+                      <p class="title">{{Row1_Box_04_title}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="{{Row2_Box_01_colour}} {{none_three}} ">
+                  <div class="value">
+                    <div class="col-xs-8">
+                      <div class="{{Row2_Box_01_icon}} icon "> </div>
+                      <p class="content content-centre "> {{Row2_Box_01}} </p>
+                    </div>
+                    <div class="col-xs-4">
+                      <ul class="list-group content-side " ng-if="Row2_Box_01_Time0 != ''">
+                        <li class="list-group-item table"> {{Row2_Box_01_Time0}} </li>
+                        <li class="list-group-item table"> {{Row2_Box_01_Time1}} </li>
+                        <li class="list-group-item table"> {{Row2_Box_01_Time2}} </li>
+                      </ul>
+                    </div>
+                    <div class="col-xs-12">
+                      <p class="title">{{Row2_Box_01_title}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4">
+                <div class="{{Row2_Box_02_colour}} {{none}}">
+                  <div class="value">
+                    <div class="col-xs-8">
+                      <div class="{{Row2_Box_03_icon}}  icon"> </div>
+                      <p class="content content-centre"> {{Row2_Box_02}} </p>
+                    </div>
+                    <div class="col-xs-4">
+                      <ul class="list-group content-side" ng-if="Row2_Box_02_Time0 != ''">
+                        <li class="list-group-item table"> {{Row2_Box_02_Time0}} </li>
+                        <li class="list-group-item table"> {{Row2_Box_02_Time1}} </li>
+                        <li class="list-group-item table"> {{Row2_Box_02_Time2}} </li>
+                      </ul>
+                    </div>
+                    <div class="col-xs-12">
+                      <p class="title">{{Row2_Box_02_title}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4">
+                <div class="{{Row2_Box_03_colour}} {{none_two}}">
+                  <div class="value">
+                    <div class="col-xs-12">
+                      <div class="ion-clock icon"> </div>
+                      <p class="content"> {{Row2_Box_03}} </p>
+                    </div>
+                    <div class="col-xs-12">
+                      <p class="title">{{Row2_Box_03_title}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="{{Row3_Box_01_colour}} ">
+                  <div class="value">
+                    <div class="col-xs-12">
+                      <p class="content"> {{Row3_Box_01}} </p>
+                    </div>
+                    <div class="col-xs-12">
+                      <div ng-if="comp.code === '' ">
+                      </div>
+                      <p class="title">{{Row3_Box_01_title}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4">
+                <div class="{{Row3_Box_02_colour}}">
+                  <div class="value">
+                    <div class="col-xs-12">
+                      <p class="content"> {{Row3_Box_02}} </p>
+                    </div>
+                    <div class="col-xs-12">
+                      <p class="title">{{Row3_Box_02_title}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4">
+                <div class="{{Row3_Box_03_colour}}">
+                  <div class="value">
+                    <div class="col-xs-12">
+                      <p class="content"> {{Row3_Box_03}} </p>
+                    </div>
+                    <div class="col-xs-12">
+                      <p class="title">{{Row3_Box_03_title}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div ng-app="scw" ng-controller="add_message_controller">
+              <div class="col-lg-12">
+                <div class="" style="max-height:80px;">
+                  <div>
+                    <div class="col-xs-12 ">
+                      <div class="">
+                      </div>
+                      <div class="message bubble {{bubble_message}}" style="margin-top:-10px; margin-left:30px; padding-left:20px; padding-right:20px; color:white;">
+                        <div class="margin-top:-10px !important;"> {{Row4_Box_01}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  &nbsp;
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

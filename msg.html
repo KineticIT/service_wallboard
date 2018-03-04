@@ -1,0 +1,100 @@
+﻿<html>
+
+<head>
+  <title>Add Message</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css'>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300|Work+Sans:300" rel="stylesheet">
+  <link rel="stylesheet" href="content/css/bootstrap.css">
+  <link rel="stylesheet" href="content/css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300|Work+Sans:300" rel="stylesheet">
+  <script src="content/libs/jquery-3.1.1.min.js"></script>
+  <script src="content/libs/tether.min.js"></script>
+  <script src="content/libs/angular.js"></script>
+  <script src="content/libs/bootstrap.js"></script>
+  <script src="app/start.js"></script>
+
+  <script src="app/messaging/message_controller.js"></script>
+  <script src="app/messaging/message_services.js"></script>
+</head>
+
+<body ng-app="scw" ng-controller="add_message_controller">
+  <div class="container-fluid">
+    <div class="row" style="margin:30px">
+      <span class="{{page_icon}} icon-title"></span>
+      <span class="page-title">Message</span>
+    </div>
+    <div class="row" style="margin:30px; margin-top:-35px; ">
+      <div class="col-xs-12" style="height:130px;">
+
+        <div class="form-group">
+
+          <div class="col-xs-4">
+            <div class="value">
+
+              <p class="msg_icon_title" style="margin-bottom:1px; font-size:20px;">Wallboard Message:</p>
+              <form ng-submit="mySubmit()">
+                <input type="text" id="message" class="form-control" maxlength="65" ng-model="messageText" style="min-width:250px;">
+                <p style="margin-top:5px;"> Enter a message to be displayed.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-2">
+          <div class="value">
+            <button type="submit" class="btn btn-default" style="margin-top:15px;">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin-left:30px; margin-top:-55px;">
+      <div class="col-md-1">
+        <div class="{{Row1_Box_01_colour}} icon_block" ng-click="myFunc('chgre')" style="min-width:100px;">
+          <p class="msg_icon_title">Message</p>
+        </div>
+      </div>
+
+      <div class="col-md-1">
+        <div class="{{Row1_Box_02_colour}} stage-warning icon_block" ng-click="myFunc('chora')" style="min-width:100px;">
+          <p class="msg_icon_title">Notify</p>
+        </div>
+      </div>
+
+      <div class="col-md-1">
+        <div class="{{Row1_Box_04_colour}} stage-alert icon_block" ng-click="myFunc('chred')" style="min-width:100px;">
+          <p class="msg_icon_title">Alert</p>
+        </div>
+      </div>
+
+      <div class="col-md-5">
+        <div class="">
+          <div class="message_icon_box">
+            <div class="col-xs-12">
+              <p class="msg_icon_title"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin: 30px; margin-top: -15px;">
+
+      <div class="col-md-12">
+        <div class="icon_block">
+          <div class=" col-md-1 ">
+          </div>
+          <div class="message bubble {{bubble_message}}" style="margin-top: -10px; margin-left:30px; padding-left:20px; padding-right:20px; color:white; ">
+            <div class="margin-top:-10px !important; "> {{messageText}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
