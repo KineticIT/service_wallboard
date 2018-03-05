@@ -1,3 +1,10 @@
+
+/* wallboard CSS */
+
+:root {
+  --font: 'Work Sans', sans-serif;
+}
+
 body {
     cursor: url('http://ionicframework.com/img/finger.png'), auto;
 }
@@ -12,12 +19,12 @@ body {
   font-size: 45px;
   font-weight: 500;
   line-height: 35px;
-  font-family: 'Work Sans', sans-serif;
+  font-family: var(--font);
 }
 
 .page-title {
   font-size: 50px;
-  font-family: 'Work Sans', sans-serif;
+  font-family: var(--font);
 }
 
 .value {
@@ -207,6 +214,11 @@ body {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+  margin-top:-10px; 
+  margin-left:30px; 
+  padding-left:20px; 
+  padding-right:20px; 
+  color:white;
 }
 
 .bubble:after {
@@ -261,4 +273,8 @@ body {
   -moz-border-radius: 10px;
   border-radius: 10px;
   border: #f2f2f2 solid 7px !important;
+}
+
+.message_height {
+  max-height:80px;
 }
