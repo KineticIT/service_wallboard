@@ -2,6 +2,8 @@
 
 This is a wallboard built with AngularJS 1.5 and PHP. The grid layout is Bootstrap. This project has been used to display data from Cisco UCCX and HPSM9.
 
+![Alt text](./wallboard.png?raw=true "Wallboard")
+
 ## Getting Started
 
 Clone the project and serve with your preferred web server.
