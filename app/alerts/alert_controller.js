@@ -10,13 +10,13 @@ angular.module('scw').
     //alert: Ready
     if ($scope.Row1_Box_01 == 0) {
       $scope.Row1_Box_01_colour = "stage stage-alert";
-      $scope.Row1_Box_01_title = "Alert 2";
+      $scope.Row1_Box_01_title = "Alert";
     } else if ($scope.Row1_Box_01 == 1) {
       $scope.Row1_Box_01_colour = "stage stage-warning";
-      $scope.Row1_Box_01_title = "Alert 1";
+      $scope.Row1_Box_01_title = "Alert";
     } else {
       $scope.Row1_Box_01_colour = "stage stage-green";
-      $scope.Row1_Box_01_title = "Title";
+      $scope.Row1_Box_01_title = "Title 01";
     }
 
     //alert: Waiting
@@ -28,7 +28,15 @@ angular.module('scw').
       $scope.Row1_Box_04_title = "Alert 1";
     } else {
       $scope.Row1_Box_04_colour = "stage stage-green";
-      $scope.Row1_Box_04_title = "Title";
+      $scope.Row1_Box_04_title = "Title 04";
+    }
+
+    //label: Password Reset
+    if ($scope.Row2_Box_01_Time0 == "") {
+        $scope.Row2_Box_01_title = "Title 05";
+    } else {
+      $scope.Row2_Box_01_title = "Title 05";
+      $scope.empty = 'stage-blue';
     }
 
     //label: Interactions
@@ -36,18 +44,8 @@ angular.module('scw').
       $scope.Row2_Box_03_title = "No Value";
       $scope.Row2_Box_02_title = "No Value";
     } else {
-      $scope.Row2_Box_03_title = "Title";
-      $scope.Row2_Box_02_title = "Title";
-    }
-
-    //label: Password Reset
-    if ($scope.Row2_Box_01_Time0 == "") {
-        $scope.Row2_Box_01_title = "Title";
-      //$scope.Row2_Box_01 = "";
-	  
-    } else {
-      $scope.Row2_Box_01_title = "Title";
-	  $scope.empty = 'stage-blue';
+      $scope.Row2_Box_02_title = "Title 06";
+      $scope.Row2_Box_03_title = "Title 07";
     }
 
     //alert: Longest Interaction Time
@@ -81,7 +79,7 @@ angular.module('scw').
       $scope.Row2_Box_02_colour = "stage stage-warning";
     } else {
       $scope.Row2_Box_02_colour = "stage stage-blue";
-    };
+    }
 
     //alert: Interaction Count
     var intAvdWait = $scope.Row3_Box_03.replace(":", "").trim();
@@ -92,7 +90,6 @@ angular.module('scw').
       $scope.Row3_Box_03_colour = "stage stage-warning";
     } else {
       $scope.Row3_Box_03_colour = "stage stage-green";
-    };
+    }
   };
-
 });
