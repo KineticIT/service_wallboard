@@ -17,5 +17,5 @@ angular.module('scw').
 			$scope.Row3_Box_02 = $scope.uccx.CallsHandled;
 			$scope.Row3_Box_03 = $scope.uccx.convAvgWaitDuration;
     });
-  }, 5000);
+  }, 5000)
 });

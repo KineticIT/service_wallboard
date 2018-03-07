@@ -46,23 +46,28 @@ wallboard.controller('scwCtrl', function($scope) {
   $scope.Row3_Box_03_colour = "stage stage-green";
   
   //set initial values
-  $scope.Row1_Box_01 = "0";
-  if ($scope.Row1_Box_01 == ''){$scope.Row1_Box_01 = "0";}
-  $scope.Row1_Box_02 = "0";
-  $scope.Row1_Box_03 = "0";
-  $scope.Row1_Box_04 = "0";
-  $scope.Row2_Box_01 = "0";
-  $scope.Row2_Box_02 = "0";
-  $scope.Row2_Box_03 = "0";
-  $scope.Row3_Box_01 = "0";
-  $scope.Row3_Box_02 = "0";
-  $scope.Row3_Box_03 = "0";
+  $scope.Row1_Box_01 = "2";
+  $scope.Row1_Box_02 = "3";
+  $scope.Row1_Box_03 = "2";
+  $scope.Row1_Box_04 = "1";
+  $scope.Row2_Box_01 = "5";
+  $scope.Row2_Box_02 = "2";
+  $scope.Row2_Box_03 = "1:02";
+  $scope.Row3_Box_01 = "179";
+  $scope.Row3_Box_02 = "236";
+  $scope.Row3_Box_03 = "0:15";
+  $scope.Row2_Box_01_Time0 = "0:46";
+  $scope.Row2_Box_01_Time1 = "0:30";
+  $scope.Row2_Box_01_Time2 = "0:10";
+  $scope.Row2_Box_02_Time0 = "0:55";
+  $scope.Row2_Box_02_Time1 = "0:22";
+  $scope.Row2_Box_02_Time2 = "0:02";
   
   //set message
-  $scope.Row4_Box_01 = "";
-  $scope.Row4_Box_01_colour = "";
+  $scope.Row4_Box_01 = "message";
+  $scope.Row4_Box_01_colour = "red";
   $scope.message_type = "key";
-  $scope.bubble_message = "";
+  $scope.bubble_message = "hello";
   $scope.messageText = 'welcome';
 
 });
