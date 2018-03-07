@@ -51,6 +51,12 @@ $interval(function() {
     sm9_query_service.getSm9().success(function(data) {
 ```
 
+#### Software Architecture
+
+This is a wallboard built with AngularJS 1.5 and PHP. The grid layout is Bootstrap. This project has been used to display data from Cisco UCCX and HPSM9.
+
+![Alt text](./architecture.png?raw=true "Wallboard")
+
 ### Configure Alert Colours on the Wallboard
 
 #### Alerts
