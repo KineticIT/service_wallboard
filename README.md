@@ -34,7 +34,6 @@ $UCCX_username = "DSN_Username";
 $UCCX_password = "DSN_Password";
 ```
 
-UCCX Database Tables
 The db_cra database contains a number of tables; the wallboard queries the RtCSQsSummary table only. 
 
 The RtCSQsSummary table contains real-time statistics about all configured Contact Service Queues in the system. This table gets updated automatically when real-time snapshot data writing for this table is enabled. The updating frequency is based on the configured data writing interval.
@@ -56,7 +55,6 @@ Example REST queries: <br />
 ‘rest/misinteraction?query=(priority.code="5") AND (Area="password reset") AND (Title="Password Reset") AND (InitiatingMedium="Self Service") AND (Phase="Work In Progress")&view=expand’
 ```
 
-SM9 REST Access
 The REST endpoint can be accessed via the included SM9 user account ‘misapi’.
 
 In order to connect to HPSM9, in 'sm9.php', provide the SM9 address and REST credentials, and change as necessary.
