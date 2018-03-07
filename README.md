@@ -53,7 +53,11 @@ $interval(function() {
 
 #### Software Architecture
 
-This is a wallboard built with AngularJS 1.5 and PHP. The grid layout is Bootstrap. This project has been used to display data from Cisco UCCX and HPSM9.
+Figure 1 depicts the high level system architecture of the SCW.
+
+- Blue: Client processing
+- Green: Server side processing
+- Orange: Resource processing
 
 ![Alt text](./architecture.png?raw=true "Wallboard")
 
